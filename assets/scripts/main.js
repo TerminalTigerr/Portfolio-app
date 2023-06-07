@@ -38,3 +38,32 @@ function blurHeader() {
                         : header.classList.remove('blur-header')
 }
 window.addEventListener('scroll', blurHeader)
+
+
+/***************Email JS***********/
+const contactForm = document.getElementById('contact-form')
+const contactMessage = document.getElementById('contact-message')
+
+function sendEmail(e) {
+    e.preventDefault()
+
+    // ServiceID - templateID - #form -publicKey
+    emailjs.sendform('service_btdnmwl', 'template_su8r4zc', '#contact-form', 'vd11_vSYF8KVM9vFK')
+        .then(() => {
+            // show sent message
+            contactMessage.textContent = 'Message sent successfully ✅'
+
+            //Remove message after 5 seconds
+            setTimeout(() => {
+                contactMessage.textContent = ''
+            }, 5000)
+
+            // clear input field 
+            contactForm.reset()
+        },() => {
+            //show error message
+            contactMessage.textContent = 'Message not sent (service error) ❌'
+        })
+}
+
+contactForm.addEventListener('submit', sendEmail)
