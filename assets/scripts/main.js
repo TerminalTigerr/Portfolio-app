@@ -26,3 +26,16 @@ function linkAction() {
     navMenu.classList.remove('show__menu')
 }
 navLink.forEach(link => link.addEventListener('click', linkAction))
+
+/**========= ADD BLUR TO THE HEADER ============*/
+function blurHeader() {
+    const header = document.getElementById('header')
+    // when scroll is greater than 50vh, add the blur__header class
+    if(this.scrollY >= 50) {
+        header.classList.add('blur__header')
+    }
+    else {
+        header.classList.remove('blur__header')
+    }
+}
+window.addEventListener('scroll', blurHeader)
