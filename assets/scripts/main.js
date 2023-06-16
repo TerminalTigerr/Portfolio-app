@@ -56,7 +56,11 @@ const sendEmail = (e) => {
             // Remove message after 5 seconds
             setTimeout(() => {
                 contactMessage.textContent = ''
-            }, 5000)
+            }, 5000);
+
+            // Clear the input fields
+            contactForm.reset()
+
         }, () => {
             // Show error message
             contactMessage.textContent = 'Message not sent (service error) ❌'
