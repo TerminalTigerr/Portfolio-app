@@ -67,3 +67,18 @@ const sendEmail = (e) => {
         })
     }
 contactForm.addEventListener('submit', sendEmail)
+
+
+/*================ SHOW SCROLL =========*/
+function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up')
+    if(this.scrollY >= 350) {
+        scrollUp.classList.add('show__scroll')
+    }
+    else {
+        scrollUp.classList.remove('show__scroll')
+    }
+}
+window.addEventListener('scroll', scrollUp)
+
+/*================= SCROLL SECTIONS ACTIVE LINK ======*/
