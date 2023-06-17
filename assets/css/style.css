@@ -752,4 +752,8 @@ img, svg {
     .home__blob {
         width: 550px;
     }
+
+    .home__content {
+        row-gap: 4.5rem;
+    }
 }
