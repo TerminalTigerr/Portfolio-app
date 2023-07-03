@@ -45,7 +45,7 @@ const contactForm = document.getElementById('contact-form')
 const contactMessage = document.getElementById('contact-message')
 
 const sendEmail = (e) => {
-    e.preventDefault
+    e.preventDefault()
 
     // serviceID - templateID - #form - publicKey
     emailjs.sendForm('service_zsf8ygq', 'template_xdmoabx', '#contact-form', 'vd11_vSYF8KVM9vFK')
